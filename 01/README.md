@@ -1,13 +1,13 @@
-# first class
+# week01
 
 _________________________
 ### atom 설치 및 package 관리
 
-![atom](./image/atom_preferences.png)
+![atom](./images/atom_preferences.png)
 
 - Preferences를 클릭시에 pakage 세팅 탭이 나옵니다.
 
-![preferences](./image/atom_pakage_setting.png)
+![preferences](./images/atom_pakage_setting.png)
 
 - pakage 세팅에서 emmet를 검색한후 install을 클릭하면 해당 디렉토리에 DI가 설정됩니다.
 
@@ -59,13 +59,13 @@ emmet이 있다면 ! + Tab 만 누르면 자동 생성 됩니다! 참 쉽쥬?
 커멘드 창에 ```npm install serve -g``` 입력하면 node로 서버가 설치되는것을 볼수 있습니다. 그리고 ```serve```를 입력시에 아래 화면처럼 5000번 포트로 서버가 시작되는 것을 볼수 있습니다.(html 파일이 있는 디렉토리에서 시작해 주셔야 합니다.)
 
 
-![serve](./image/shell_serve_init.png)
+![serve](./images/shell_serve_init.png)
 
 
 그러면 해당 디렉토리에 있는 파일을 페이지에서 확인할수 있습니다.
 
 
-![web_init](./image/web_init_page.png)
+![web_init](./images/web_init_page.png)
 ------------------------------------------------
 ### chrome 브라우저 console log 찍어보기
 
@@ -115,7 +115,7 @@ console.log('hello world');
 console창에 ```hello world``` 가 따로 찍히신거 보이시쥬?
 
 
-![web_console](./image/web_console_log.png)
+![web_console](./images/web_console_log.png)
 
 
 이렇게 웹 브라우저 안에서 console을 실행 시킬수 있고 javascript를 이용하여 여러 작엄을 할수 있습니다.
@@ -124,4 +124,4 @@ console창에 ```hello world``` 가 따로 찍히신거 보이시쥬?
 facebook같은 경우에는 이를 악용을 막기위해 아래 그림처럼 경고문도 띄어 둔다고 하네요!
 
 
-![facebook_console](./image/facebook_console.png)
+![facebook_console](./images/facebook_console.png)
