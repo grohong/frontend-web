@@ -1,4 +1,4 @@
-# first class
+# week02
 
 _________________________
 ## javascript 기본
