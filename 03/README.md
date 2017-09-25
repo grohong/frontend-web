@@ -5,7 +5,7 @@ _________________________
 
 ## javascript Object Model
 
-</br>
+<br/>
 ### DOM - Document Object Model
 
 - HTML과 XML 문서에 대한 프로그래밍 인터페이스
@@ -13,7 +13,7 @@ _________________________
 
 -> 이 발을 들으면 어떤 느낌인지 와닿지 않을수 있지만 제가 이해한 바로는 HTML의 구성요소를 javascript에서 어떻게 접근해서 다룰지에 대한 방법인거 같습니다.
 
-</br>
+<br/>
 ### BOM - Browser Object Model
 
 BOM 같은 경우에는 DOM 상위 계층으로 브라우저에서 컨트롤 하는 부분을 볼수 있습니다.
@@ -31,7 +31,7 @@ BOM 같은 경우에는 DOM 상위 계층으로 브라우저에서 컨트롤 하
 
 기본적인 BOM 메소드를 찾아 본다면
 
-</br>
+<br/>
 ##### Window
 가장 최상위 객체
 
@@ -49,7 +49,7 @@ window.close();  //브라우저 닫기
 
 -> 해당 메소드를 보면 **window** 에선 클라이언트의 큰 정보들을 관리한다는걸 알수 있습니다.
 
-</br>
+<br/>
 #### location
 url에 대한 정보
 
@@ -59,7 +59,7 @@ location.href='http://www.daum.net';  //새로운 페이지로 이동된다.
 location.reload();  //해당 페이지의 정보를 리로딩 한다.
 ```
 
-</br>
+<br/>
 #### history
 브라우저 정보
 
@@ -69,7 +69,7 @@ history.back();  //전에 히스토리로 돌아간다.
 history.go(1);
 ```
 
-</br>
+<br/>
 #### screen
 화면에 대한 정보
 
@@ -79,7 +79,7 @@ screen.width;  //화면 넓이
 screen.availWidth;  //사용 가능 화면 넓이
 ```
 
-</br>
+<br/>
 #### navigator
 브라우저 정보
 
@@ -91,5 +91,5 @@ navigator.language  //유저가 사용하는 언어(무슨 언어인지에 따�
 navigator.platform  //무슨 브라우저에서 접근하는지에 대한 정보가 있다.
 ```
 
-</br>
+<br/>
 ### DOM 메소드
