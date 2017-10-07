@@ -29,7 +29,7 @@ var totalPage = Math.ceil(todayPhoto.length / pageImage);
 
 // img 3개 보여주기
 function showImage(currentPage) {
-  var startImageIndex = currentPage - 1;
+  var startImageIndex = (currentPage - 1)*3;
   var endImageIndex = startImageIndex + pageImage;
 
   var image = "";
@@ -43,15 +43,25 @@ function showImage(currentPage) {
   }
 }
 
+//처음 화면 세팅
 showImage(currentPage);
+totalPageDom.innerHTML = totalPage
+currentPageDom.innerHTML = currentPage
 
 nextBtn.addEventListener('click', function(){
   console.log("next");
-  currentPage += 3
-  showImage(currentPage)
+
+  if(currentPage < 3){
+    currentPage += 1
+    currentPageDom.innerHTML = currentPage
+    showImage(currentPage)
+  }
 })
 prevBtn.addEventListener('click', function(){
   console.log("prev");
-  currentPage -= 3
-  showImage(currentPage)
+  if(currentPage > 1){
+    currentPage -= 1
+    currentPageDom.innerHTML = currentPage
+    showImage(currentPage)
+  }
 })
