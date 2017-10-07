@@ -10,7 +10,22 @@ var todayPhoto = [
 
 ];
 
+//html dom 속성 부름
+var currentPageDom = document.getElementById('page');
+var totalPageDom = document.getElementById('totalPage');
+
+var prevBtn = document.getElementById('prev');
+var nextBtn = document.getElementById('next');
+
 var imageWrap = document.querySelector('.wrap')
+
+
+//페이지 속성 값들
+//페이지에 보여줄 이미지
+var pageImage = 3;
+var currentPage = 1;
+//총 페이지 개수(올림)
+var totalPage = Math.ceil(todayPhoto.length / pageImage);
 
 // img 3개 보여주기
 function showImage() {
@@ -20,10 +35,9 @@ function showImage() {
     if(todayPhoto[i]) {
       image += '<img src="' + todayPhoto[i].img + '">';
     }
+    //이미지 wrap에 이미지 추가
+      imageWrap.innerHTML = image;
   }
-
-//이미지 wrap에 이미지 추가
-  imageWrap.innerHTML = image;
 }
 
 showImage()
