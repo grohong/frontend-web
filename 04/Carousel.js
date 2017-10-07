@@ -28,10 +28,13 @@ var currentPage = 1;
 var totalPage = Math.ceil(todayPhoto.length / pageImage);
 
 // img 3개 보여주기
-function showImage() {
-  var image = ""
+function showImage(currentPage) {
+  var startImageIndex = currentPage - 1;
+  var endImageIndex = startImageIndex + pageImage;
 
-  for(var i=0; i<3; i++) {
+  var image = "";
+
+  for(var i=startImageIndex; i<endImageIndex; i++) {
     if(todayPhoto[i]) {
       image += '<img src="' + todayPhoto[i].img + '">';
     }
@@ -40,11 +43,15 @@ function showImage() {
   }
 }
 
-showImage()
+showImage(currentPage);
 
 nextBtn.addEventListener('click', function(){
   console.log("next");
+  currentPage += 3
+  showImage(currentPage)
 })
 prevBtn.addEventListener('click', function(){
-  console.log("prev")
+  console.log("prev");
+  currentPage -= 3
+  showImage(currentPage)
 })
