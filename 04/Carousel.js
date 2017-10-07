@@ -41,3 +41,10 @@ function showImage() {
 }
 
 showImage()
+
+nextBtn.addEventListener('click', function(){
+  console.log("next");
+})
+prevBtn.addEventListener('click', function(){
+  console.log("prev")
+})
