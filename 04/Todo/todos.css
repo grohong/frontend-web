@@ -31,6 +31,10 @@ header {
   position: relative;
 }
 
+.inputButton {
+  border: 3px solid #ddd;
+}
+
 #login-buttons {
   display: block;
 }
