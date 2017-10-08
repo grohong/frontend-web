@@ -1,16 +1,16 @@
-function inputFunc() {
-  var todoList = document.getElementById('todoUl');
-  var inputText = document.getElementById('inputText').value;
-  console.log(inputText);
+var todoList = document.getElementById('todoUl');
 
-  var todoList = generateTodoList(inputText);
+function inputFunc() {
+  var inputText = document.getElementById('inputText').value;
+
+  var li = generateTodoList(inputText);
+  todoList.appendChild(li);
 
   // 콘솔 로그
   return false;
 }
 
 function deleteFunc(buttonElement) {
-  console.log(buttonElement);
   var liElement = buttonElement.parentElement;
   liElement.parentElement.removeChild(liElement);
 
@@ -23,22 +23,22 @@ function generateTodoList(todo) {
   var todoLi = document.createElement('li');
 
   //li 속성값
-  var cancleButton = document.createElement('button');
-  cancleButton.className = "delete";
-  cancleButton.setAttribute(onclick, "deleteFunc(this);");
-  cancleButton.innerHTML = "x";
+  var cancelButton = document.createElement('button');
+  cancelButton.className = "delete";
+  cancelButton.setAttribute("onclick", "deleteFunc(this);");
+  cancelButton.innerHTML = "x";
 
   var checkInput = document.createElement('input');
   checkInput.className = "toggle-checked";
-  checkInput.setAttribute(type, "checkbox");
+  checkInput.setAttribute("type", "checkbox");
 
   var todoSpan = document.createElement('span');
   todoSpan.className = "text";
   todoSpan.innerHTML = todo;
 
-  todoLi.appendChild(cancleButton);
+  todoLi.appendChild(cancelButton);
   todoLi.appendChild(checkInput);
   todoLi.appendChild(todoSpan);
 
-  return todoLi
+  return todoLi;
 }
