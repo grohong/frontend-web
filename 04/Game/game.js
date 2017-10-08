@@ -30,6 +30,11 @@ boxDiv.addEventListener('click', function() {
 
 function gameRun() {
   gameScore += 1;
+
+  if(gameScore%5 == 0) {
+    gameLevel += 1;
+  }
+
   scoreSpan.innerHTML = gameScore;
   levelSpan.innerHTML = gameLevel;
   missSpan.innerHTML = missBox;
