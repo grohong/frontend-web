@@ -7,10 +7,11 @@ var boxDiv = document.getElementById('gameBox');
 
 
 //게임 속성들
-var gameLevel = 1
-var gameScore = 0
-var missBox = 0
-// var endBox = 6
+var gameLevel = 1;
+var gameScore = 0;
+var missBox = 0;
+var setMissTime = 2500;
+
 
 function moveBox() {
   var boxLeft = Math.random() * gameFieldDiv.offsetWidth;
@@ -22,10 +23,14 @@ function moveBox() {
   boxDiv.style.backgroundColor = "red";
 }
 
+//게임 시작
+var missTime = setInterval(missBoxFunction, 1000);
 boxDiv.addEventListener('click', function() {
   boxDiv.style.backgroundColor = "blue";
-  setTimeout(moveBox, 100);
+  clearInterval(missTime);
   gameRun();
+  setTimeout(moveBox, 500);
+  missTime = setInterval(missBoxFunction, setMissTime);
 });
 
 function gameRun() {
@@ -33,9 +38,29 @@ function gameRun() {
 
   if(gameScore%5 == 0) {
     gameLevel += 1;
-  }
+    setMissTime -= 1000;
+  };
 
   scoreSpan.innerHTML = gameScore;
   levelSpan.innerHTML = gameLevel;
+
+  //missBox 초기화
+  missBox = 0;
   missSpan.innerHTML = missBox;
+
+
+}
+
+function missBoxFunction() {
+  //6개 이상이면 게임 오버
+  if(missBox == 6) {
+    alert("Game Over");
+    missBox = 0;
+    missSpan.innerHTML = missBox;
+    setMissTime = 2500;
+  }
+
+  missBox += 1;
+  missSpan.innerHTML = missBox;
+  moveBox();
 }
