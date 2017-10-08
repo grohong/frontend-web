@@ -3,7 +3,12 @@ var scoreSpan = document.getElementById('score');
 var levelSpan = document.getElementById('level');
 var missSpan = document.getElementById('miss');
 
-console.log(gameFieldDiv);
-console.log(scoreSpan);
-console.log(levelSpan);
-console.log(missSpan);
+function createBox() {
+  var boxDiv = document.createElement('div');
+  boxDiv.setAttribute("id", "gameBox")
+
+  return boxDiv
+}
+
+var box = createBox();
+gameFieldDiv.appendChild(box)
