@@ -3,12 +3,15 @@ var scoreSpan = document.getElementById('score');
 var levelSpan = document.getElementById('level');
 var missSpan = document.getElementById('miss');
 
-function createBox() {
-  var boxDiv = document.createElement('div');
-  boxDiv.setAttribute("id", "gameBox")
+function moveBox() {
+  var boxDiv = document.getElementById('gameBox');
 
-  return boxDiv
+  var boxLeft = Math.random() * gameFieldDiv.offsetWidth;
+  console.log(boxLeft);
+  console.log(boxDiv);
+  // boxDiv.setAttribute("left", parseInt(boxLeft));
+  boxDiv.style.left = parseInt(boxLeft) + "px";
+
 }
 
-var box = createBox();
-gameFieldDiv.appendChild(box)
+moveBox();
