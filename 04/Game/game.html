@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Game</title>
+  <style>
+  #gameInfo {
+    border-bottom: 3px solid #ddd;
+    text-align: center;
+    height: auto;
+  }
+
+  #gameField {
+    margin: 10px;
+    height: 80vh;
+  }
+
+  #gameBox{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+  }
+
+  p {
+    font-weight: bold;
+  }
+
+  span {
+    color: red;
+  }
+
+  </style>
+</head>
+<body>
+  <div id="gameInfo">
+    <p>Score : <span id="score">0</span></p>
+    <p>Level : <span id="level">1</span></p>
+    <p>Miss : <span id="miss">0</span> / <span>6</span></p>
+  </div>
+
+  <div id="gameField">
+    <div id="gameBox"></div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
