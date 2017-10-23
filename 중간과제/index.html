@@ -7,7 +7,34 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>1boon</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <style>.list{margin:10px; padding:10px}</style>
+    <style>
+      .list {
+        margin:10px; padding:10px
+      }
+
+
+      .glyphicon-refresh-animate {
+          -animation: spin .7s infinite linear;
+          -ms-animation: spin .7s infinite linear;
+          -webkit-animation: spinw .7s infinite linear;
+          -moz-animation: spinm .7s infinite linear;
+      }
+
+      @keyframes spin {
+          from { transform: scale(1) rotate(0deg);}
+          to { transform: scale(1) rotate(360deg);}
+      }
+
+      @-webkit-keyframes spinw {
+          from { -webkit-transform: rotate(0deg);}
+          to { -webkit-transform: rotate(360deg);}
+      }
+
+      @-moz-keyframes spinm {
+          from { -moz-transform: rotate(0deg);}
+          to { -moz-transform: rotate(360deg);}
+      }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -26,19 +53,19 @@
 
         여기서 각 리스트 뿌려주기 <br><br>
 
-        http://1boon.kakao.com/ch/trending.json <br>
-        http://1boon.kakao.com/ch/issue.json <br>
-        http://1boon.kakao.com/ch/enter.json <br>
+
 
         <!-- 로딩마크업: 로딩중일때만 표시 -->
         <div class="text-center">
-            <span class="glyphicon glyphicon-refresh"></span> 로딩중
+          <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> 로딩중
         </div>
     </div>
 
     <div class="text-center">
         <button type="button" class="btn btn-default">더보기</button>
     </div>
+
+    <script src="script.js"></script>
 </div>
 </body>
 </html>
