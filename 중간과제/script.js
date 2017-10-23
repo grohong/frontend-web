@@ -9,19 +9,27 @@ getJSON(url, done);
 
 //callback 함수
 function done(result) {
-  console.log(result);
+  console.log(result.data);
+  var data = result.data;
+
+  for (var i=0; i<data.length; i++) {
+    listGenerate(data[i].path, data[i].coverImage, data[i].title, data[i].totalView);
+  }
 }
 
 //리스트 모델 함수
-function listGenerate() {
+function listGenerate(link, imageUrl, title, viewCount) {
+  //링크추가
   var listElement = document.createElement('a');
   listElement.setAttribute("class", "listElement");
+  var linkUrl = "http://1boon.kakao.com/" + link;
+  listElement.setAttribute("href", linkUrl);
 
   //이미지 추가
   var elementImage = document.createElement('span');
   var image = document.createElement('img');
   elementImage.setAttribute("class", "elementImage");
-  image.setAttribute("src", "http://t1.daumcdn.net/liveboard/AUCTIONTourShop/78119d3f39f8421b8301809ed2400d4c.jpg");
+  image.setAttribute("src", imageUrl);
   elementImage.appendChild(image);
 
   listElement.appendChild(elementImage);
@@ -29,18 +37,15 @@ function listGenerate() {
   //타이틀 추가
   var elementTitle = document.createElement('span');
   elementTitle.setAttribute("class", "elementTitle");
-  elementTitle.innerHTML = "타이틀";
+  elementTitle.innerHTML = title;
 
   listElement.appendChild(elementTitle);
 
   //조회수 추가
   var elementView = document.createElement('span');
   elementView.setAttribute("class", "elementView");
-  var viewCount = 300
   elementView.innerHTML = viewCount + "명이 봤어요";
 
   listElement.appendChild(elementView);
   list.appendChild(listElement);
 }
-
-listGenerate();
