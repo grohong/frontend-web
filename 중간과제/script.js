@@ -27,9 +27,9 @@ var url = trendingUrl + '?pagesize=' + pagesize + '&page=' + page;
 getJSON(url, done);
 currentCategory = trending
 
+
 //callback 함수
 function done(result) {
-  console.log(result.data);
   var data = result.data;
 
   for (var i=0; i<data.length; i++) {
@@ -41,15 +41,25 @@ function done(result) {
 }
 
 function selectCategory(event) {
-  console.log(event.path[1].getAttribute('class'));
-  console.log(event.path[1].getAttribute('id'));
-  console.log(currentCategory);
+
   //.acitve 버튼 찾기
   if(event.path[1].getAttribute('class') == null) {
+
+    //.acitve 설정
     currentCategory.removeAttribute('class');
     currentCategory = event.path[1];
     currentCategory.setAttribute('class', 'active')
+
+    //active 계시물 삭제
+    var index = list.children.length;
+    for(var i=0; i<=index; i++) {
+      list.removeChild(list.childNodes[0]);
+    }
+
+
   }
+
+
 }
 
 //리스트 모델 함수
