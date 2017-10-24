@@ -7,6 +7,7 @@ var page = 1;
 var trendingUrl = 'http://1boon.kakao.com/ch/trending.json';
 var issueUrl = 'http://1boon.kakao.com/ch/issue.json';
 var enterUrl = 'http://1boon.kakao.com/ch/enter.json';
+var baseUrl = 'http://1boon.kakao.com/ch/';
 var currentCategory;
 
 //dom
@@ -23,13 +24,13 @@ issue.addEventListener('click', selectCategory);
 enter.addEventListener('click', selectCategory);
 
 //첫 페이지 로딩(trending 시작), 현재 보여주는 url 지정
-var url = trendingUrl + '?pagesize=' + pagesize + '&page=' + page;
-getJSON(url, done);
+getJSON(urlGenertator('trending'), done);
 currentCategory = trending
 
 
 //callback 함수
 function done(result) {
+  console.log(result);
   var data = result.data;
 
   for (var i=0; i<data.length; i++) {
@@ -41,7 +42,6 @@ function done(result) {
 }
 
 function selectCategory(event) {
-
   //.acitve 버튼 찾기
   if(event.path[1].getAttribute('class') == null) {
 
@@ -50,16 +50,23 @@ function selectCategory(event) {
     currentCategory = event.path[1];
     currentCategory.setAttribute('class', 'active')
 
-    //active 계시물 삭제
-    var index = list.children.length;
-    for(var i=0; i<=index; i++) {
-      list.removeChild(list.childNodes[0]);
+    //리스트 child 삭제
+    while(list.firstChild) {
+      list.removeChild(list.firstChild);
     }
 
 
+    //page 1로 초기화
+    page = 1;
+
+    getJSON(urlGenertator(event.path[1].getAttribute('id')), done);
   }
+}
 
-
+//url 관리 함수
+function urlGenertator(category) {
+  var url = baseUrl + category + ".json" + '?pagesize=' + pagesize + '&page=' + page;
+  return url;
 }
 
 //리스트 모델 함수
@@ -98,8 +105,7 @@ function listGenerate(link, imageUrl, title, viewCount) {
 //더보기 버튼
 function addPage() {
   page++;
-  url = tredingUrl + '?pagesize=' + pagesize + '&page=' + page;
   //로딩중
   loder.style.visibility = "visible";
-  getJSON(url, done);
+  getJSON(urlGenertator(currentCategory.getAttribute('id')), done);
 }
