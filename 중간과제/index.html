@@ -16,9 +16,9 @@
     <div>
         <ul class="nav nav-tabs">
             <!-- 선택된탭:선택된 탭에 .active    -->
-            <li class="active"><a href="#">트렌딩</a></li>
-            <li><a href="#">이슈</a></li>
-            <li><a href="#">엔터</a></li>
+            <li id="trending" class="active"><a href="#">트렌딩</a></li>
+            <li id="issue"><a href="#">이슈</a></li>
+            <li id="enter"><a href="#">엔터</a></li>
         </ul>
     </div>
 
@@ -27,12 +27,12 @@
     </div>
 
     <!-- 로딩마크업: 로딩중일때만 표시 -->
-    <div class="text-center">
+    <div id="loder" class="text-center">
       <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> 로딩중
     </div>
 
     <div class="text-center">
-        <button type="button" class="btn btn-default">더보기</button>
+        <button type="button" class="btn btn-default" onclick="addPage();">더보기</button>
     </div>
 
     <script src="util.js"></script>
