@@ -44,7 +44,6 @@ function done(result) {
 function selectCategory(event) {
   //.acitve 버튼 찾기
   if(event.path[1].getAttribute('class') == null) {
-
     //.acitve 설정
     currentCategory.removeAttribute('class');
     currentCategory = event.path[1];
@@ -54,7 +53,6 @@ function selectCategory(event) {
     while(list.firstChild) {
       list.removeChild(list.firstChild);
     }
-
 
     //page 1로 초기화
     page = 1;
